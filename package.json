@@ -1,0 +1,15 @@
+{
+  "name": "frentle-xrechnung",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^5.2.0",
+    "jspdf": "^2.5.2"
+  }
+}
