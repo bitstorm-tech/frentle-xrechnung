@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rsm:CrossIndustryInvoice xmlns:rsm="urn:un:unece:uncefact:data:standard:CrossIndustryInvoice:100"
+  xmlns:ram="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:100"
+  xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:100"
+  xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:100">
+  <rsm:ExchangedDocumentContext>
+    <ram:BusinessProcessSpecifiedDocumentContextParameter>
+      <ram:ID>Kontext des Geschäftsprozesses (BT-23)</ram:ID>
+    </ram:BusinessProcessSpecifiedDocumentContextParameter>
+    <ram:GuidelineSpecifiedDocumentContextParameter>
+      <ram:ID>urn:cen.eu:en16931:2017#compliant#urn:xeinkauf.de:kosit:xrechnung_3.0</ram:ID>
+    </ram:GuidelineSpecifiedDocumentContextParameter>
+  </rsm:ExchangedDocumentContext>
+  <rsm:ExchangedDocument>
+    <ram:ID>Rechnungsnummer (BT-1)</ram:ID>
+    <ram:TypeCode>Code für den Rechnungstyp (BT-3)</ram:TypeCode>
+    <ram:IssueDateTime>
+      <udt:DateTimeString format="102">Rechnungsdatum (BT-2)</udt:DateTimeString>
+    </ram:IssueDateTime>
+    <ram:IncludedNote>
+      <ram:Content>Kommentar- / Bemerkungsfeld (BT-22)</ram:Content>
+    </ram:IncludedNote>
+  </rsm:ExchangedDocument>
+  <rsm:SupplyChainTradeTransaction>
+    <ram:IncludedSupplyChainTradeLineItem>
+      <ram:AssociatedDocumentLineDocument>
+        <ram:LineID>Positionsnummer (BT-126)</ram:LineID>
+        <ram:IncludedNote>
+          <ram:Content>Bemerkungs- / Kommentarfeld auf Positionsebene (BT-127)</ram:Content>
+        </ram:IncludedNote>
+      </ram:AssociatedDocumentLineDocument>
+      <ram:SpecifiedTradeProduct>
+        <ram:SellerAssignedID>Artikelnummer des Verkäufers (BT-155)</ram:SellerAssignedID>
+        <ram:BuyerAssignedID>Artikelnummer des Käufers (BT-156)</ram:BuyerAssignedID>
+        <ram:Name>Positionsbezeichnung (BT-153)</ram:Name>
+        <ram:Description>Positionsbeschreibung (BT-154)</ram:Description>
+        <ram:ApplicableProductCharacteristic>
+          <ram:Description>Zusatzinformationen Eigenschaft (BT-160)</ram:Description>
+          <ram:Value>Zusatzinformationen Wert (BT-161)</ram:Value>
+        </ram:ApplicableProductCharacteristic>
+        <ram:DesignatedProductClassification>
+          <ram:ClassCode listID="Code des Schemas (BT-158-1)"
+            listVersionID="Version des Schemas (BT-158-2)">Kennung der
+            Artikelklassifizierung (BT-158)</ram:ClassCode>
+          <ram:ClassName>Klassifikationsname</ram:ClassName>
+        </ram:DesignatedProductClassification>
+        <ram:OriginTradeCountry>
+          <ram:ID>Ursprungsland des Artikels (BT-159)</ram:ID>
+        </ram:OriginTradeCountry>
+      </ram:SpecifiedTradeProduct>
+      <ram:SpecifiedLineTradeAgreement>
+        <ram:BuyerOrderReferencedDocument>
+          <ram:LineID>Bestellpositionsnummer DB (BT-132)</ram:LineID>
+        </ram:BuyerOrderReferencedDocument>
+        <ram:NetPriceProductTradePrice>
+          <ram:ChargeAmount>Preis pro Einheit (netto), nach Rabatt (BT-146)</ram:ChargeAmount>
+          <ram:BasisQuantity unitCode="Mengeneinheit (BT-150)">Preisbasis Menge (BT-149)</ram:BasisQuantity>
+        </ram:NetPriceProductTradePrice>
+      </ram:SpecifiedLineTradeAgreement>
+      <ram:SpecifiedLineTradeDelivery>
+        <ram:BilledQuantity unitCode="Mengeneinheit (BT-130)">Menge (BT-129)</ram:BilledQuantity>
+      </ram:SpecifiedLineTradeDelivery>
+      <ram:SpecifiedLineTradeSettlement>
+        <ram:ApplicableTradeTax>
+          <ram:TypeCode>VAT</ram:TypeCode>
+          <ram:CategoryCode>Code der Umsatzsteuerkategorie (BT-151)</ram:CategoryCode>
+          <ram:RateApplicablePercent>Umsatzsteuersatz in Prozent (BT-152)</ram:RateApplicablePercent>
+        </ram:ApplicableTradeTax>
+        <ram:BillingSpecifiedPeriod>
+          <ram:StartDateTime>
+            <udt:DateTimeString format="102">Beginn Abrechnungszeitraum auf Positionsebene (BT-134)</udt:DateTimeString>
+          </ram:StartDateTime>
+          <ram:EndDateTime>
+            <udt:DateTimeString format="102">Ende Abrechnungszeitraum auf Positionsebene (BT-135)</udt:DateTimeString>
+          </ram:EndDateTime>
+        </ram:BillingSpecifiedPeriod>
+        <ram:SpecifiedTradeSettlementLineMonetarySummation>
+          <ram:LineTotalAmount>Positionsgesamtpreis (netto)(BT-131)</ram:LineTotalAmount>
+        </ram:SpecifiedTradeSettlementLineMonetarySummation>
+        <ram:AdditionalReferencedDocument>
+          <ram:IssuerAssignedID>Objektkennung auf Positionsebene (BT-128)</ram:IssuerAssignedID>
+        </ram:AdditionalReferencedDocument>
+        <ram:ReceivableSpecifiedTradeAccountingAccount>
+          <ram:ID>Kontierungsinformation (z. B. Bahnstelle) auf Positionsebene (BT-133)</ram:ID>
+        </ram:ReceivableSpecifiedTradeAccountingAccount>
+      </ram:SpecifiedLineTradeSettlement>
+    </ram:IncludedSupplyChainTradeLineItem>
+    <ram:ApplicableHeaderTradeAgreement>
+      <ram:BuyerReference>Leitweg-ID (DB = 992-90009-96)(BT-10)</ram:BuyerReference>
+      <ram:SellerTradeParty>
+        <ram:ID>Lieferanten- / Kreditorennummer bei der DB (BT-29)</ram:ID>
+        <ram:Name>Vollständiger Firmenname des Verkäufers (BT-27)</ram:Name>
+        <ram:Description>Weitere rechtliche Informationen (BT-33)</ram:Description>
+        <ram:SpecifiedLegalOrganization>
+          <ram:ID>Handelsregisternummer des Verkäufers(BT-30)</ram:ID>
+          <ram:TradingBusinessName>Abweichender Handelsname des Verkäufers (BT-28)</ram:TradingBusinessName>
+        </ram:SpecifiedLegalOrganization>
+        <ram:DefinedTradeContact>
+          <ram:PersonName>Name des Ansprechpartners vom Verkäufer (BT-41)</ram:PersonName>
+          <ram:TelephoneUniversalCommunication>
+            <ram:CompleteNumber>Telefonnummer des Ansprechpartners (BT-42)</ram:CompleteNumber>
+          </ram:TelephoneUniversalCommunication>
+          <ram:EmailURIUniversalCommunication>
+            <ram:URIID>E-Mailadresse des Anspechpartners (BT-43)</ram:URIID>
+          </ram:EmailURIUniversalCommunication>
+        </ram:DefinedTradeContact>
+        <ram:PostalTradeAddress>
+          <ram:PostcodeCode>PLZ (BT-38)</ram:PostcodeCode>
+          <ram:LineOne>Straße u. Hausnummer / Postfach (BT-35)</ram:LineOne>
+          <ram:LineTwo>Zusätzliche Adresszeile (BT-36)</ram:LineTwo>
+          <ram:LineThree>Weitere zusätzliche Adresszeile (BT-162)</ram:LineThree>
+          <ram:CityName>Stadt/Ort (BT-37)</ram:CityName>
+          <ram:CountryID>Ländercode (BT-40)</ram:CountryID>
+        </ram:PostalTradeAddress>
+        <ram:URIUniversalCommunication>
+          <ram:URIID schemeID="EM">Elektronische Adresse (E-Mail) des Verkäufers (BT-34)</ram:URIID>
+        </ram:URIUniversalCommunication>
+        <ram:SpecifiedTaxRegistration>
+          <ram:ID schemeID="VA">Umsatzsteuer-ID vom Verkäufer (BT-31)</ram:ID>
+        </ram:SpecifiedTaxRegistration>
+      </ram:SellerTradeParty>
+      <ram:BuyerTradeParty>
+        <ram:ID>Debitorennummer / Kundennummer (BT-46)</ram:ID>
+        <ram:Name>Vollständiger Firmenname des Rechnungsempfängers (BT-44)</ram:Name>
+        <ram:SpecifiedLegalOrganization>
+          <ram:ID>Handelsregisternummer des Käufers (BT-47)</ram:ID>
+          <ram:TradingBusinessName>Abweichender Handelsname des Käufers (BT-45)</ram:TradingBusinessName>
+        </ram:SpecifiedLegalOrganization>
+        <ram:DefinedTradeContact>
+          <ram:PersonName>Name des Auftraggebers / Anforderers (BT-56)</ram:PersonName>
+          <ram:TelephoneUniversalCommunication>
+            <ram:CompleteNumber>Telefonnummer des Auftraggebers / Anforderers (BT-57)</ram:CompleteNumber>
+          </ram:TelephoneUniversalCommunication>
+          <ram:EmailURIUniversalCommunication>
+            <ram:URIID>E-Mailadresse des Auftraggebers / Anforderers (BT-58)</ram:URIID>
+          </ram:EmailURIUniversalCommunication>
+        </ram:DefinedTradeContact>
+        <ram:PostalTradeAddress>
+          <ram:PostcodeCode>PLZ (BT-53)</ram:PostcodeCode>
+          <ram:LineOne>Straße u. Hausnummer / Postfach (BT-50)</ram:LineOne>
+          <ram:LineTwo>Zusätzliche Adresszeile (BT-51)</ram:LineTwo>
+          <ram:LineThree>Weitere zusätzliche Adresszeile (BT-163)</ram:LineThree>
+          <ram:CityName>Stadt/Ort (BT-52)</ram:CityName>
+          <ram:CountryID>Ländercode (BT-55)</ram:CountryID>
+        </ram:PostalTradeAddress>
+        <ram:URIUniversalCommunication>
+          <ram:URIID schemeID="EM">E-Mailadresse zur Rechnungsübermittlung (BT-49)</ram:URIID>
+        </ram:URIUniversalCommunication>
+        <ram:SpecifiedTaxRegistration>
+          <ram:ID schemeID="VA">Umsatzsteuer-ID des Käufers (BT-48)</ram:ID>
+        </ram:SpecifiedTaxRegistration>
+      </ram:BuyerTradeParty>
+      <ram:SellerTaxRepresentativeTradeParty>
+        <ram:ID />
+        <ram:Name>Vollständiger Name des steuerlichen Vertreters des Verkäufers (BT-62)</ram:Name>
+        <ram:PostalTradeAddress>
+          <ram:PostcodeCode>PLZ (BT-67)</ram:PostcodeCode>
+          <ram:LineOne>Straße u. Hausnummer / Postfach (BT-64)</ram:LineOne>
+          <ram:LineTwo>Zusätzliche Adresszeile (BT-65)</ram:LineTwo>
+          <ram:LineThree>Weitere zusätzliche Adresszeile (BT-164)</ram:LineThree>
+          <ram:CityName>Stadt/Ort (BT-66)</ram:CityName>
+          <ram:CountryID>Ländercode (BT-69)</ram:CountryID>
+        </ram:PostalTradeAddress>
+        <ram:SpecifiedTaxRegistration>
+          <ram:ID schemeID="VA">Umsatzsteuer-ID des steuerlichen Vertreters (BT-63)</ram:ID>
+        </ram:SpecifiedTaxRegistration>
+      </ram:SellerTaxRepresentativeTradeParty>
+      <ram:SellerOrderReferencedDocument>
+        <ram:IssuerAssignedID>Auftragsnummer (BT-14)</ram:IssuerAssignedID>
+      </ram:SellerOrderReferencedDocument>
+      <ram:BuyerOrderReferencedDocument>
+        <ram:IssuerAssignedID>Bestellnummer (BT-13)</ram:IssuerAssignedID>
+      </ram:BuyerOrderReferencedDocument>
+      <ram:ContractReferencedDocument>
+        <ram:IssuerAssignedID>Rahmenvertragsnummer (BT-12)</ram:IssuerAssignedID>
+      </ram:ContractReferencedDocument>
+      <ram:AdditionalReferencedDocument>
+        <ram:IssuerAssignedID>Dateiname des eingebetteten Anhangs (BT-122)</ram:IssuerAssignedID>
+        <ram:TypeCode>Code für den Anhang (BT-124) hier ist der Code 916 zu verwenden</ram:TypeCode>
+        <ram:Name>Beschreibung des Anhangs (BT-123)</ram:Name>
+        <ram:AttachmentBinaryObject mimeCode="application/pdf" (BT-125-1 hier beispielhaft PDF-Anhang) filename="Musteranhang.pdf" (BT-125-2 Dateiname des Anahngs)
+        >...Beispielhafte
+          Darstellung eines eingebetteten Anhangs....
+          m9udE5hbWUgL0hlbHZldGljYQ0AKL0l0YWxpY0FuZ2xlIDANCi9TdGVtViAxMDUNCj4+DQplbmRv
+          YmoNCjMgMCBvYmoNCi9XaW5BbnNpRW5jb2RpbmcNCmVuZG9iag0KNCAwIG9iag0KPDwNCiVEZXZ0
+          eXBlIEhQTEo0ICAgIEZvbnQgSEVMVkUgICAgbm9ybWFsIExhbmcgREUNCi9UeXBlIC9Gb250DQov
+          U3VidHlwZSAvVHlwZTENCi9CYXNlRm9udCAvSGVsdmV0arWNhDQovTmFtZSAvRjAwMQ0KL0VuY29k
+          aW5nIDMgMCBSDQovRmlyc3RDaGFyIDMyDQovTGFzdENoYXIgMjU1DQolQ2hhcndpZHRoIHZhbHVl
+          cyBmcm9tIEhQTEo0IEhFTFZFIDA4MCBub3JtYWwNCi9XaWR0aHMNClsgMjc4IDMzMSA1MDAgNjMx
+          IDYzMSAxMDAwIDc1NiAzMzEgMzMxIDMzMSA2MzEgMTAwMCAzMzEgMzMxIDMzMSAzMzEgNjMxIDYz
+          MSA2MzEgNjMxIDYzMSA2MzEgNjMxIDYzMSA2MzEgNjMxIDMzMSAzMzEgMTAwMCAxMDAwIDEwMDAg
+          NTE5IDEwMDAgNzQ0IDYzMSA3MDYgNzI1IDU3NSA1NETYgNzQ0IDcyNSAyNzUgNTU2IDY2OSA1Mzgg
+          OTA2IDcyNSA3NTYgNTk0IDc3NSA2NTAgNjUwIDYzMSA3MjUgNzI1IDEwMDAgNzI1IDY4OCA2MTMg
+          MzMxIDMzMQ0KIDMzMSA1MDAgNTAwIDMzMSA1MzggNTc1IDUzOCA1NzUgNTM4IDM2OSA1NzUgNTc1
+          IDI0NCAyNDQgNTM4IDI0NCA4NjkgNTc1IDU3NSA1NzUgNTc1IDM1MCA1MDAgMzY5IDU3NSA1NTYg
+          ODY5IDU1NiA1NTYgNDgxIDQ0NCA1MDAgNDQ0IDEwMDAgMCA2MzEgMCAwIDAgMCAwIDAgMCAwIDAg
+          MCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDMzMSA2MzEgNjMx
+          IDYzMSA2MzEgNTAwIDYzMSAyMjUgNTAwIDQwNiA1NTYNCiAxMDAwIDAgNTAwIDIyNSAyMjUgMTAw
+          MCAzODggMzg4IDIyNSA1NTYgNjMxIDMzMSAyMjUgMzg4IDQwNiA1NTYgMTAwMCAxMDAwIDEwMDAg
+          NTE5IDc0NCA3NDQgNzQ0IDc0NCA3NDQgNzQ0IDk4MSA3MDYgNTc1IDU3NSA1NzUgNTc1IDI3NSAy
+</ram:AttachmentBinaryObject>
+      </ram:AdditionalReferencedDocument>
+      <ram:AdditionalReferencedDocument>
+        <ram:IssuerAssignedID schemeID="AAJ">Objektkennung (BT-18)</ram:IssuerAssignedID>
+        <ram:TypeCode>130</ram:TypeCode>
+      </ram:AdditionalReferencedDocument>
+      <ram:AdditionalReferencedDocument>
+        <ram:IssuerAssignedID schemeID="AAG">Vergabenummer (BT-17)</ram:IssuerAssignedID>
+        <ram:TypeCode>50</ram:TypeCode>
+      </ram:AdditionalReferencedDocument>
+      <ram:SpecifiedProcuringProject>
+        <ram:ID>Projektnummer (BT-11)</ram:ID>
+        <ram:Name />
+      </ram:SpecifiedProcuringProject>
+    </ram:ApplicableHeaderTradeAgreement>
+    <ram:ApplicableHeaderTradeDelivery>
+      <ram:ShipToTradeParty>
+        <ram:ID>Kennung des Lieferorts (BT-71)</ram:ID>
+        <ram:Name>Vollständiger Firmenname des Waren- bzw. Leistungsempfängers (BT-70)</ram:Name>
+        <ram:PostalTradeAddress>
+          <ram:PostcodeCode>PLZ (BT-78)</ram:PostcodeCode>
+          <ram:LineOne>Straße u. Hausnummer / Postfach (BT-75)</ram:LineOne>
+          <ram:LineTwo>Zusätzliche Adresszeile (BT-76)</ram:LineTwo>
+          <ram:LineThree>Weitere zusätzliche Adresszeile (BT-165)</ram:LineThree>
+          <ram:CityName>Stadt/Ort (BT-77)</ram:CityName>
+          <ram:CountryID>Ländercode (BT-80)</ram:CountryID>
+        </ram:PostalTradeAddress>
+      </ram:ShipToTradeParty>
+      <ram:ActualDeliverySupplyChainEvent>
+        <ram:OccurrenceDateTime>
+          <udt:DateTimeString format="102">Lieferdatum (BT-72)</udt:DateTimeString>
+        </ram:OccurrenceDateTime>
+      </ram:ActualDeliverySupplyChainEvent>
+      <ram:DespatchAdviceReferencedDocument>
+        <ram:IssuerAssignedID>Lieferscheinnummer (BT-16)</ram:IssuerAssignedID>
+      </ram:DespatchAdviceReferencedDocument>
+    </ram:ApplicableHeaderTradeDelivery>
+    <ram:ApplicableHeaderTradeSettlement>
+      <ram:PaymentReference>Verwendungszweck (BT-83)</ram:PaymentReference>
+      <ram:InvoiceCurrencyCode>Währung (BT-5)</ram:InvoiceCurrencyCode>
+      <ram:PayeeTradeParty>
+        <ram:ID>IBAN des abweichenden Zahlungsempfängers (BT-60)</ram:ID>
+        <ram:GlobalID />
+        <ram:Name>Name des abweichenden Zahlungsempfängers (BT-59)</ram:Name>
+        <ram:SpecifiedLegalOrganization>
+          <ram:ID>Handelsregisternummer des abweichenden Zahlungsempfängers (BT-61)</ram:ID>
+        </ram:SpecifiedLegalOrganization>
+      </ram:PayeeTradeParty>
+      <ram:SpecifiedTradeSettlementPaymentMeans>
+        <ram:TypeCode>Code für den Zahlweg (BT-81)</ram:TypeCode>
+        <ram:Information>Zahlweg zusätzlich als Textangabe (BT-82)</ram:Information>
+        <ram:PayeePartyCreditorFinancialAccount>
+          <ram:IBANID>IBAN (BT-84)</ram:IBANID>
+          <ram:AccountName>Name des Kontoinhabers (BT-85)</ram:AccountName>
+        </ram:PayeePartyCreditorFinancialAccount>
+        <ram:PayeeSpecifiedCreditorFinancialInstitution>
+          <ram:BICID>BIC / SWIFT (BT-86)</ram:BICID>
+        </ram:PayeeSpecifiedCreditorFinancialInstitution>
+      </ram:SpecifiedTradeSettlementPaymentMeans>
+      <ram:ApplicableTradeTax>
+        <ram:CalculatedAmount>Betrag Umsatzsteuer (BT-117)</ram:CalculatedAmount>
+        <ram:TypeCode>VAT</ram:TypeCode>
+        <ram:ExemptionReason>Grund für Ausnahme von Umsatzsteuerpflicht, z.B. Reverse Charge
+          (BT-120)</ram:ExemptionReason>
+        <ram:BasisAmount>Basisbetrag für die Umsatzsteuerberechnung (BT-116)</ram:BasisAmount>
+        <ram:CategoryCode>Code der Umsatzsteuerkategorie (BT-118)</ram:CategoryCode>
+        <ram:RateApplicablePercent>Umsatzsteuersatz in Prozent (BT-119)</ram:RateApplicablePercent>
+      </ram:ApplicableTradeTax>
+      <ram:BillingSpecifiedPeriod>
+        <ram:StartDateTime>
+          <udt:DateTimeString format="102">Beginn Abrechnungszeitraum (BT-73)</udt:DateTimeString>
+        </ram:StartDateTime>
+        <ram:EndDateTime>
+          <udt:DateTimeString format="102">Ende Abrechnungszeitraum (BT-74)</udt:DateTimeString>
+        </ram:EndDateTime>
+      </ram:BillingSpecifiedPeriod>
+      <ram:SpecifiedTradePaymentTerms>
+        <ram:Description>
+          Zahlungsbedingungen (BT-20)
+          z. B.:
+          #SKONTO#TAGE=21#PROZENT=3.00#
+          #SKONTO#TAGE=30#PROZENT=0.00#
+</ram:Description>
+        <ram:DueDateDateTime>
+          <udt:DateTimeString format="102">Fälligkeitsdatum (BT-9)</udt:DateTimeString>
+        </ram:DueDateDateTime>
+      </ram:SpecifiedTradePaymentTerms>
+      <ram:SpecifiedTradeSettlementHeaderMonetarySummation>
+        <ram:LineTotalAmount>Summe aller Positionen (netto) (BT-106)</ram:LineTotalAmount>
+        <ram:TaxBasisTotalAmount>Gesamtsumme (netto) (BT-109)</ram:TaxBasisTotalAmount>
+        <ram:TaxTotalAmount currencyID="EUR">Betrag Umsatzsteuer (BT-117)</ram:TaxTotalAmount>
+        <ram:GrandTotalAmount>Gesamtsumme (brutto) (BT-112)</ram:GrandTotalAmount>
+        <ram:TotalPrepaidAmount>Gezahlter Betrag (BT-113)</ram:TotalPrepaidAmount>
+        <ram:DuePayableAmount>Fälliger Betrag (BT-115)</ram:DuePayableAmount>
+      </ram:SpecifiedTradeSettlementHeaderMonetarySummation>
+      <ram:InvoiceReferencedDocument>
+        <ram:IssuerAssignedID>Vorausgegangene Rechnungsnummer (BT-25)</ram:IssuerAssignedID>
+        <ram:FormattedIssueDateTime>
+          <qdt:DateTimeString format="102">Datum der vorausgegangenen Rechnung (BT-26)</qdt:DateTimeString>
+        </ram:FormattedIssueDateTime>
+      </ram:InvoiceReferencedDocument>
+      <ram:ReceivableSpecifiedTradeAccountingAccount>
+        <ram:ID>Kontierungsinformation (z. B. Bahnstelle)(BT-19)</ram:ID>
+      </ram:ReceivableSpecifiedTradeAccountingAccount>
+    </ram:ApplicableHeaderTradeSettlement>
+  </rsm:SupplyChainTradeTransaction>
+</rsm:CrossIndustryInvoice>
