@@ -1,23 +1,27 @@
 import Fastify from 'fastify'
 import { jsPDF } from 'jspdf'
-import fs from 'node:fs'
-
-const dirname = 'tmp'
+import { randomUUID } from 'node:crypto'
 
 const fastify = Fastify({
-  logger: true
+  logger: {
+    transport: {
+      target: 'pino-pretty',
+      options: {
+        translateTime: 'HH:MM:ss',
+        ignore: 'pid,hostname',
+      }
+    }
+  }
 })
 
-if (!fs.existsSync(dirname)) {
-  fs.mkdirSync(dirname)
-}
+fastify.get('/', async function handler(_request, reply) {
+  const content = createPdf()
 
-fastify.get('/', async function handler(request, reply) {
-  const pdfFilename = createPdf()
-  const xmlFilename = createXml()
-  mergeXmlWithPdf(pdfFilename, xmlFilename)
+  reply
+    .header('Content-Type', 'application/pdf')
+    .header('Content-Disposition', `attachment; filename="${randomUUID()}.pdf"`);
 
-  return { hello: 'world' }
+  return content
 })
 
 try {
@@ -27,18 +31,12 @@ try {
   process.exit(1)
 }
 
-function createPdf() {
+async function createPdf() {
   const pdf = new jsPDF()
-  pdf.text('Hallo PDF', 10, 10)
+  pdf.text('Hallo PDF 1337', 20, 20)
 
-  const filename = `${Date.now()}.pdf`
-  pdf.save(`tmp/${filename}`)
+  const response = await fetch('zugfert-template.xml')
+  console.lor(response)
 
-  return filename
+  return pdf.output()
 }
-
-function createXml() {
-  return ''
-}
-
-function mergeXmlWithPdf(pdfFilename, xmlFilename) { }
